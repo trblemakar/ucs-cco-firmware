@@ -8,6 +8,7 @@ __author__ = 'jamakar'
 import logging
 import optparse
 import getpass
+from pprint import pprint
 
 from ucsmsdk.utils.ccoimage import get_ucs_cco_image_list
 
@@ -46,7 +47,8 @@ if __name__ == "__main__":
         if not options.password:
             options.password = getpass.getpass(prompt='Please Enter your CCO Password: ')
 
-        print firmware_available(options.userName, options.password)
+        the_list = firmware_available(options.userName, options.password)
+        pprint(the_list)
 
     except Exception, err:
         print "Exception:", str(err)
