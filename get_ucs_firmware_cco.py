@@ -47,8 +47,8 @@ if __name__ == "__main__":
         if not options.password:
             options.password = getpass.getpass(prompt='Please Enter your CCO Password: ')
 
-        the_list = firmware_available(options.userName, options.password)
-        pprint(the_list)
+        firmware_list = firmware_available(options.userName, options.password)
+        pprint(firmware_list)
 
     except Exception, err:
         print "Exception:", str(err)
